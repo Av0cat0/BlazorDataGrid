@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Client\UITable3.Client.csproj" />
+    <ProjectReference Include="..\Shared\UITable3.Shared.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Remove="Resources\" />
+    <None Remove="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Drawing">
+      <HintPath>..\..\..\Downloads\system\System.Drawing.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
