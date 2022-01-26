@@ -28,7 +28,7 @@ namespace UITable.Server.Controllers
                 row.ActivityContext = Rf.RandomLastName();
                 row.Status = ((ActivityStatus)Rf.RandomNumber(Enum.GetNames(typeof(ActivityStatus)).Length)).ToString();
                 row.ServiceUserId = Guid.NewGuid();
-                row.CreatedDate = Rf.RandomDay();
+                row.CreatedDate = DateTime.Today.AddDays(-1*Rf.RandomNumber(14));
                 row.DueDate = DateTime.Today.AddDays(Rf.RandomNumber(14));
                 row.Priority = ((PriorityStates)Rf.RandomNumber(Enum.GetNames(typeof(PriorityStates)).Length)).ToString();
                 row.Photo = (Rf.RandomNumber(8) + 1).ToString() + ".jpeg";

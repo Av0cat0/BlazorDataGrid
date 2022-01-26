@@ -23,9 +23,4 @@
   <ItemGroup>
     <Folder Include="Resources\" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System.Drawing">
-      <HintPath>..\..\..\Downloads\system\System.Drawing.dll</HintPath>
-    </Reference>
-  </ItemGroup>
 </Project>

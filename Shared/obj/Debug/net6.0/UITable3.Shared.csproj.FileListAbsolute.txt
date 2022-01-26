@@ -10,3 +10,15 @@
 /Users/roni/Projects/UITable3/Shared/obj/Debug/net6.0/UITable3.Shared.dll
 /Users/roni/Projects/UITable3/Shared/obj/Debug/net6.0/ref/UITable3.Shared.dll
 /Users/roni/Projects/UITable3/Shared/obj/Debug/net6.0/UITable3.Shared.pdb
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Shared\bin\Debug\net6.0\UITable3.Shared.deps.json
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Shared\bin\Debug\net6.0\UITable3.Shared.dll
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Shared\bin\Debug\net6.0\ref\UITable3.Shared.dll
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Shared\bin\Debug\net6.0\UITable3.Shared.pdb
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Shared\obj\Debug\net6.0\UITable3.Shared.csproj.AssemblyReference.cache
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Shared\obj\Debug\net6.0\UITable3.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Shared\obj\Debug\net6.0\UITable3.Shared.AssemblyInfoInputs.cache
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Shared\obj\Debug\net6.0\UITable3.Shared.AssemblyInfo.cs
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Shared\obj\Debug\net6.0\UITable3.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Shared\obj\Debug\net6.0\UITable3.Shared.dll
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Shared\obj\Debug\net6.0\ref\UITable3.Shared.dll
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Shared\obj\Debug\net6.0\UITable3.Shared.pdb

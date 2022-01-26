@@ -68,10 +68,6 @@ namespace UITable3.Shared
                 "The Pope" };
         }
 
-        public DateTime RandomDay()
-        {
-            return DateTime.Today.AddDays(RandomNumber(21));
-        }
         public string RandomFirstName()
         {
             return first_names[RandomNumber(first_names.Length)];
@@ -84,11 +80,6 @@ namespace UITable3.Shared
         {
             return gen.Next(range);
         }
-        /*public Enum RandomEnumaration(Enum myEnum) //call with typeof(enum)
-        {
-            Array values = Enum.GetValues(myEnum.GetType());
-            return (Enum)1;//(myEnum.GetType())values.GetValue(RandomNumber(values.Length)); 
-        }*/
     }
 
 }
