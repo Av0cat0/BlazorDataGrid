@@ -1,0 +1,12 @@
+/Users/roni/Projects/UITable3/Shared/bin/Debug/net6.0/UITable3.Shared.deps.json
+/Users/roni/Projects/UITable3/Shared/bin/Debug/net6.0/UITable3.Shared.dll
+/Users/roni/Projects/UITable3/Shared/bin/Debug/net6.0/ref/UITable3.Shared.dll
+/Users/roni/Projects/UITable3/Shared/bin/Debug/net6.0/UITable3.Shared.pdb
+/Users/roni/Projects/UITable3/Shared/obj/Debug/net6.0/UITable3.Shared.csproj.AssemblyReference.cache
+/Users/roni/Projects/UITable3/Shared/obj/Debug/net6.0/UITable3.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/Users/roni/Projects/UITable3/Shared/obj/Debug/net6.0/UITable3.Shared.AssemblyInfoInputs.cache
+/Users/roni/Projects/UITable3/Shared/obj/Debug/net6.0/UITable3.Shared.AssemblyInfo.cs
+/Users/roni/Projects/UITable3/Shared/obj/Debug/net6.0/UITable3.Shared.csproj.CoreCompileInputs.cache
+/Users/roni/Projects/UITable3/Shared/obj/Debug/net6.0/UITable3.Shared.dll
+/Users/roni/Projects/UITable3/Shared/obj/Debug/net6.0/ref/UITable3.Shared.dll
+/Users/roni/Projects/UITable3/Shared/obj/Debug/net6.0/UITable3.Shared.pdb
