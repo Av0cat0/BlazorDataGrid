@@ -641,11 +641,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Roni\\Downloads\\UITable3hopefullylast\\UITable3\\Shared\\UITable3.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Shared\\UITable3.Shared.csproj",
       "projectName": "UITable3.Shared",
-      "projectPath": "C:\\Users\\Roni\\Downloads\\UITable3hopefullylast\\UITable3\\Shared\\UITable3.Shared.csproj",
+      "projectPath": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Shared\\UITable3.Shared.csproj",
       "packagesPath": "C:\\Users\\Roni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Roni\\Downloads\\UITable3hopefullylast\\UITable3\\Shared\\obj\\",
+      "outputPath": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

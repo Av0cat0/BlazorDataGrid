@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SxW/f66k6B5fB3W24DlyImMjlcb/b4mVqlgdXDaWb8U6EP6hm+WgSXUiMeyiCzQYxKol8YCOv8UcmxSwhIbaaQ==",
+  "dgSpecHash": "ecDXTinnSFwcf+MvO5TCepKw28ndN3B5rDB7+orsIdukzBY/aExV9XvDYUpnHs+RTitLwh+OIoB/adrnjNwVBg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Roni\\Downloads\\UITable3hopefullylast\\UITable3\\Shared\\UITable3.Shared.csproj",
+  "projectFilePath": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Shared\\UITable3.Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Roni\\.nuget\\packages\\libsassbuilder\\2.0.1\\libsassbuilder.2.0.1.nupkg.sha512",
     "C:\\Users\\Roni\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.0\\microsoft.aspnetcore.authorization.5.0.0.nupkg.sha512",
