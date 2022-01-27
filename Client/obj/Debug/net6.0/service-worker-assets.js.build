@@ -69,7 +69,7 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-v14bKh4EmUlYcrAJWL+k3wmx4X3oAaa5K3cBJk\/zSXg=",
+      "hash": "sha256-JqtEQdhJvjjfT5x1aAuilh0s1KM7jWBA\/10cqlNeSN0=",
       "url": "UITable3.Client.styles.css"
     },
     {
@@ -161,8 +161,16 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
+      "hash": "sha256-yklb9shrfwktYkkoEBmFqUFTLRSdzYrP6hcPilO+iFA=",
+      "url": "_framework\/Microsoft.Win32.SystemEvents.dll"
+    },
+    {
       "hash": "sha256-KVPtSv\/849tqjRzJjX9o5KDZY5uUiWx2aH8XHa1Rtlw=",
       "url": "_framework\/Radzen.Blazor.dll"
+    },
+    {
+      "hash": "sha256-mNB+ax59NkGoYIo2Cz3Cc\/6KD3iSa24eX2eaegdNSR8=",
+      "url": "_framework\/System.Drawing.Common.dll"
     },
     {
       "hash": "sha256-fpnawcAWgJ8i0JPJ9DhQ8XFDKYsTi6md2eRFNh\/bONA=",
@@ -865,19 +873,19 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-ABopgnZj77PlPvBzY76s1Z0mH\/uS7vHyGDLte5wY2w8=",
+      "hash": "sha256-aivudQpHN0iqbsp\/XSJkTN5MuN\/4L\/sn6bMQDfP3Kv0=",
       "url": "_framework\/UITable3.Shared.dll"
     },
     {
-      "hash": "sha256-X0GWKcEFoK3buc2\/HaB9RFH5ZUlkZFLUijotLnBxACQ=",
+      "hash": "sha256-XrkNVh6X0eYE6OcuolA6Y\/IpmIBmyjJr2K8gmuGSoOo=",
       "url": "_framework\/UITable3.Shared.pdb"
     },
     {
-      "hash": "sha256-zo5290WfPFg23aXf91Dl6gnsFMjS605Y3CtbI2rRiMU=",
+      "hash": "sha256-dLd4LmUvR4kzmshOeZVOdqdkpZqS76JQ+SQQg9NVTgU=",
       "url": "_framework\/UITable3.Client.dll"
     },
     {
-      "hash": "sha256-GEELDAFT8ojPPCbLo\/6kRMjRqsxVpdf9KkOEz+PkGOg=",
+      "hash": "sha256-QDuap4cqyNIvkw6iJUVTo5AZAj8iABScb0m5N8nad4U=",
       "url": "_framework\/UITable3.Client.pdb"
     },
     {
@@ -885,7 +893,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-JI6H8r9wZdcMjL+7xI3AOnupSP4gBIb+EpivKBLTrGw=",
+      "hash": "sha256-DRwHgzoyz4FNkhPACUVS5yahMpsIMMMTixdcbw0xwmA=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -997,5 +1005,5 @@
       "url": "_content\/Radzen.Blazor\/Radzen.Blazor.js"
     }
   ],
-  "version": "N7qI5qZk"
+  "version": "UPplDsbj"
 };

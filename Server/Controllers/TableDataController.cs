@@ -31,7 +31,7 @@ namespace UITable.Server.Controllers
                 row.CreatedDate = DateTime.Today.AddDays(-1*Rf.RandomNumber(14));
                 row.DueDate = DateTime.Today.AddDays(Rf.RandomNumber(14));
                 row.Priority = ((PriorityStates)Rf.RandomNumber(Enum.GetNames(typeof(PriorityStates)).Length)).ToString();
-                row.Photo = (Rf.RandomNumber(8) + 1).ToString() + ".jpeg";
+                row.Photo = "assets/" + (Rf.RandomNumber(8) + 1).ToString() + ".jpeg";
                 data.Add(row);
             }
             return data.ToArray();
@@ -42,7 +42,8 @@ namespace UITable.Server.Controllers
         public byte[] Get(string imagePath)
         {
             RandomFeatures Rf = new RandomFeatures();
-            return Image.FromFile((Rf.RandomNumber(8) + 1).ToString() + ".jpeg");
+            return System.IO.File.ReadAllBytes((Rf.RandomNumber(8) + 1).ToString() + ".jpeg");
+            return File(content, "image/png", parammodel.modelname);
         }*/
 
         // POST api/values

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8wB5VCSWqfX5U3siDJzJliXwpdwWLaCxXIZCWuX4xbyfvlvnWrC3lZf2ChnACtPiOmnV5vDNMANCym0b+p27jw==",
+  "dgSpecHash": "kE+32hUKJEbJMChn/F2w9N2MFlz68TwYXEyZOEpAwzWJuR25mOJHcG/SOH8onhF/Ys5Dvo9Xm0Dsu6/kihXW/w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Server\\UITable3.Server.csproj",
   "expectedPackageFiles": [
@@ -30,8 +30,10 @@
     "C:\\Users\\Roni\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Roni\\.nuget\\packages\\microsoft.jsinterop\\6.0.1\\microsoft.jsinterop.6.0.1.nupkg.sha512",
     "C:\\Users\\Roni\\.nuget\\packages\\microsoft.jsinterop.webassembly\\6.0.1\\microsoft.jsinterop.webassembly.6.0.1.nupkg.sha512",
+    "C:\\Users\\Roni\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Roni\\.nuget\\packages\\radzen.blazor\\3.14.7\\radzen.blazor.3.14.7.nupkg.sha512",
     "C:\\Users\\Roni\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+    "C:\\Users\\Roni\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
     "C:\\Users\\Roni\\.nuget\\packages\\system.io.pipelines\\6.0.1\\system.io.pipelines.6.0.1.nupkg.sha512",
     "C:\\Users\\Roni\\.nuget\\packages\\system.linq.dynamic.core\\1.2.12\\system.linq.dynamic.core.1.2.12.nupkg.sha512",
     "C:\\Users\\Roni\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",

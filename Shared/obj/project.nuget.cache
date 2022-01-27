@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ecDXTinnSFwcf+MvO5TCepKw28ndN3B5rDB7+orsIdukzBY/aExV9XvDYUpnHs+RTitLwh+OIoB/adrnjNwVBg==",
+  "dgSpecHash": "2tUGqI9rkccTIFA2ucM7ZQeeVDeHcbNJTVyS1cbo3v3nFHd5UXX1FwIkl0tko2S5/yqAxHkxd9WKeE1SiTTRvg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Shared\\UITable3.Shared.csproj",
   "expectedPackageFiles": [
@@ -18,7 +18,9 @@
     "C:\\Users\\Roni\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
     "C:\\Users\\Roni\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\Roni\\.nuget\\packages\\microsoft.jsinterop\\5.0.0\\microsoft.jsinterop.5.0.0.nupkg.sha512",
+    "C:\\Users\\Roni\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Roni\\.nuget\\packages\\radzen.blazor\\3.14.7\\radzen.blazor.3.14.7.nupkg.sha512",
+    "C:\\Users\\Roni\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
     "C:\\Users\\Roni\\.nuget\\packages\\system.io.pipelines\\5.0.0\\system.io.pipelines.5.0.0.nupkg.sha512",
     "C:\\Users\\Roni\\.nuget\\packages\\system.linq.dynamic.core\\1.2.12\\system.linq.dynamic.core.1.2.12.nupkg.sha512"
   ],

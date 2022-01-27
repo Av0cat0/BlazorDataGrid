@@ -1,7 +1,7 @@
 @page "/tabledata"
 @using UITable3.Shared
 @inject HttpClient Http
-
+@inject DialogService DialogService
 
 @if (tasks == null)
 {
@@ -22,19 +22,19 @@ else
             <RadzenDataGridColumn TItem="TableData" Property="ActivityContext" Title="Context" />
             <RadzenDataGridColumn Width="150px" TItem="TableData" Property="Status" Title="Status">
                 <Template Context="data">
-                    <RadzenButton ButtonStyle=@(StatusBtnStyle(data.Status)) Class="Status-btn"  Text="@data.Status" />
+                    <RadzenButton ButtonStyle=@(StatusBtnStyle(data.Status)) class="status-btn" Text="@data.Status" />
                 </Template>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn TItem="TableData" Property="ServiceUserId" Title="Assigned To">
                 <Template Context="data">
-                    <RadzenImage Path="@data.Photo" style="width: 30px; height: 40px; border-radius: 8px; float: left;" />
+                    <RadzenImage Path=@(data.Photo) style="width: 40px; height: 40px; border-radius: 6px; float: left;" />
                 </Template>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn TItem="TableData" Property="CreatedDate" Title="Start Date" FormatString="{0:d}" />
             <RadzenDataGridColumn TItem="TableData" Property="DueDate" Title="Due Date" FormatString="{0:d}" />
-            <RadzenDataGridColumn Width="160px" TItem="TableData" Property="Priority" Title="Priority">
+            <RadzenDataGridColumn Width="150px" TItem="TableData" Property="Priority" Title="Priority">
                 <Template Context="data">
-                    <RadzenButton ButtonStyle=@(StatusBtnStyle(data.Priority)) Class="Status-btn"  Text="@data.Priority" />
+                    <RadzenButton ButtonStyle=@(PriorityBtnStyle(data.Priority)) Class="Status-btn"  Text="@data.Priority" />
                 </Template>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn Width="150px" TItem="TableData" Property="WorkFlowStep" Title="Process Status">
@@ -102,13 +102,22 @@ else
                 return ButtonStyle.Danger;
         }
     }
-    /*private async Task GetImage(string imagePath)
+
+    /*async Task ShowInlineDialog()
     {
-        byte[] byteImage = await Http.GetByteArrayAsync("image");
-        using (var ms = new MemoryStream(byteArrayIn))
-        {
-            return Image.FromStream(ms);
-        }
+     var result = await DialogService.OpenAsync("Simple Dialog", ds =>
+        @<div>
+                <div class="col">
+                    <RadzenButton Text="Ok" Click="() => ds.Close(true)" Class="mr-1" Style="width: 80px;" />
+                    <RadzenButton Text="Cancel" Click="() => ds.Close(false)" ButtonStyle="ButtonStyle.Secondary" Class="mr-1" />
+                    <RadzenButton Text="Refresh" Click="() => ds.Refresh() " ButtonStyle="ButtonStyle.Light"  Class="mr-1 float-right" />          
+                </div>
+        </div>);
+    
     }*/
 
+
+
+//ContextMenu=@(args => ShowContextMenuWithItems(args))
 }
+

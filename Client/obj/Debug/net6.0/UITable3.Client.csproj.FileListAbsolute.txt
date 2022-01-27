@@ -835,3 +835,11 @@ C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Cl
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Client.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\ref\UITable3.Client.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Client.pdb
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.SystemEvents.dll
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Drawing.Common.dll
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.SystemEvents.dll.gz
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Drawing.Common.dll.gz
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\build-gz\c+h19YWT.gz
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\build-gz\Hm4awL81.gz

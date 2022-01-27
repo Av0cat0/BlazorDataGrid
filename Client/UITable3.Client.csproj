@@ -10,10 +10,22 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'UITable3' ">
     <ExternalConsole>true</ExternalConsole>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\assets\1.jpeg" />
+    <Content Remove="wwwroot\assets\2.jpeg" />
+    <Content Remove="wwwroot\assets\3.jpeg" />
+    <Content Remove="wwwroot\assets\4.jpeg" />
+    <Content Remove="wwwroot\assets\5.jpeg" />
+    <Content Remove="wwwroot\assets\6.jpeg" />
+    <Content Remove="wwwroot\assets\7.jpeg" />
+    <Content Remove="wwwroot\assets\8.jpeg" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.1" PrivateAssets="all" />
     <PackageReference Include="Radzen.Blazor" Version="3.14.7" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,5 +44,15 @@
     <Content Update="Pages\Table.razor">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\assets\1.jpeg" />
+    <None Include="wwwroot\assets\2.jpeg" />
+    <None Include="wwwroot\assets\3.jpeg" />
+    <None Include="wwwroot\assets\4.jpeg" />
+    <None Include="wwwroot\assets\5.jpeg" />
+    <None Include="wwwroot\assets\6.jpeg" />
+    <None Include="wwwroot\assets\7.jpeg" />
+    <None Include="wwwroot\assets\8.jpeg" />
   </ItemGroup>
 </Project>

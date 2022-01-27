@@ -46,6 +46,10 @@
             "Radzen.Blazor": {
               "target": "Package",
               "version": "[3.14.7, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [

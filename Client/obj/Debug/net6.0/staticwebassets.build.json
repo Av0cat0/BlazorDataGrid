@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nlz3bdJTuPdFc4OzotuKeqKsE0ZSh7DiLsb4da93a9g=",
+  "Hash": "3o9dQfbnkneDzJ9Bzf5DDlRm3E5O6KJvORINZRGBFys=",
   "Source": "UITable3.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -1088,6 +1088,23 @@
       "OriginalItemSpec": "C:\\Users\\Roni\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.1\\runtimes\\browser-wasm\\lib\\net6.0\\Microsoft.Win32.Registry.dll"
     },
     {
+      "Identity": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Win32.SystemEvents.dll",
+      "SourceId": "UITable3.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Win32.SystemEvents.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Roni\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\lib\\net6.0\\Microsoft.Win32.SystemEvents.dll"
+    },
+    {
       "Identity": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\mscorlib.dll",
       "SourceId": "UITable3.Client",
       "SourceType": "Computed",
@@ -1647,6 +1664,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Roni\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.1\\runtimes\\browser-wasm\\lib\\net6.0\\System.dll"
+    },
+    {
+      "Identity": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Drawing.Common.dll",
+      "SourceId": "UITable3.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Drawing.Common.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Roni\\.nuget\\packages\\system.drawing.common\\6.0.0\\lib\\net6.0\\System.Drawing.Common.dll"
     },
     {
       "Identity": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Drawing.dll",
@@ -4879,6 +4913,23 @@
       "OriginalItemSpec": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Security.Claims.dll"
     },
     {
+      "Identity": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\obj\\Debug\\net6.0\\build-gz\\c+h19YWT.gz",
+      "SourceId": "UITable3.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Win32.SystemEvents.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Win32.SystemEvents.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Win32.SystemEvents.dll"
+    },
+    {
       "Identity": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\obj\\Debug\\net6.0\\build-gz\\c2OgnOac.gz",
       "SourceId": "UITable3.Client",
       "SourceType": "Computed",
@@ -5523,6 +5574,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.JSInterop.WebAssembly.dll"
+    },
+    {
+      "Identity": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\obj\\Debug\\net6.0\\build-gz\\Hm4awL81.gz",
+      "SourceId": "UITable3.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Drawing.Common.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Drawing.Common.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Drawing.Common.dll"
     },
     {
       "Identity": "C:\\Users\\Roni\\Desktop\\UITable\\BlazorDataGrid\\Client\\obj\\Debug\\net6.0\\build-gz\\hzW7x5O4.gz",
