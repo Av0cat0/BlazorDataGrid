@@ -15,6 +15,11 @@
       "ProjectGuid": "b0bc8aa4-b5f2-41c6-ba03-9ef05418896d",
       "DisplayName": "UITable3.Shared",
       "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 3

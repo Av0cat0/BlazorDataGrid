@@ -12,14 +12,17 @@ else
     <RadzenDataGrid @ref="tasksGrid" AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" PageSize="10" AllowSorting="true"
                     Data="@tasks" Style="padding: 0px" ColumnWidth="120px" TItem="TableData" EditMode="DataGridEditMode.Single">
         <Columns>
-            <RadzenDataGridColumn Width="40px" TItem="TableData" Title="#" Filterable="false" Sortable="false" TextAlign="TextAlign.Center">
+            <RadzenDataGridColumn Width="50px" TItem="TableData" Title="#" Filterable="false" Sortable="false" TextAlign="TextAlign.Center">
                 <Template Context="data">
                     @(tasks.IndexOf(data) + 1)
                 </Template>
-            </RadzenDataGridColumn>
-            <RadzenDataGridColumn TItem="TableData" Property="ActivityName" Title="Name" >
                 <EditTemplate Context="row">
-                    <RadzenTextBox @bind-Value="row.ActivityName" Style="width:100%; display:block;" Name="Name"  />
+                    <RadzenTextBox  Value=@(selectIndex(row).ToString())  Disabled="true"  />
+                </EditTemplate>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TableData" Property="ActivityName" Title="Name"  >
+                <EditTemplate Context="row">
+                    <RadzenTextBox @bind-Value="row.ActivityName" Style="width:100%; display:block;" Name="Name" AutoComplete="true"   />
                 </EditTemplate>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn TItem="TableData" Property="ActivityDescription" Title="Description" >
@@ -33,7 +36,7 @@ else
                 </EditTemplate>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn Width="90px" TItem="TableData" Property="Status" Title="Status" TextAlign="TextAlign.Center" 
-                LogicalFilterOperator="LogicalFilterOperator.Or" FilterValue="@(status)"  Type="typeof(IEnumerable<string>)"  >
+                LogicalFilterOperator="LogicalFilterOperator.Or" FilterValue="@(status)" FilterOperator="FilterOperator.Contains"  Type="typeof(IEnumerable<string>)"  >
                 <Template Context="data">
                     <RadzenButton ButtonStyle=@(StatusBtnStyle(data.Status)) Style="width: 80px;
     height: 21px;
@@ -47,7 +50,7 @@ else
                 </EditTemplate>
                 <FilterTemplate>
                     <RadzenDropDown @bind-Value=@(status) Style="width:100%; margin: 8px 4px;"
-                         Data="@(statuses)" AllowClear="true" Multiple="true" />
+                         Change=@OnSelectedStatus Data="@(statuses)" AllowClear="true" Multiple="true" />
                 </FilterTemplate>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn TItem="TableData" Property="ServiceUserId" Title="Assigned To" >
@@ -66,18 +69,24 @@ else
                     <RadzenDatePicker @bind-Value="row.DueDate" Style="width:100%;" Name="Due Date"  />
                 </EditTemplate>
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn Width="90px" TItem="TableData" Property="Priority" Title="Priority">
+            <RadzenDataGridColumn Width="90px" TItem="TableData" Property="Priority" Title="Priority" TextAlign="TextAlign.Center"
+             LogicalFilterOperator="LogicalFilterOperator.Or" FilterValue="@(priority)" FilterOperator="FilterOperator.Contains"  Type="typeof(IEnumerable<string>)">
                 <Template Context="data">
                     <RadzenButton ButtonStyle=@(PriorityBtnStyle(data.Priority)) Style="width: 80px;
     height: 21px;
     border-radius: 6px;
     font-size: 12px;
     text-align: center;
-    padding: 0px;" Class="Status-btn"  Text="@data.Priority" />
+    padding: 0px;
+position:relative;" Class="Status-btn"  Text="@data.Priority" />
                 </Template>
                 <EditTemplate Context="row">
                    <RadzenDropDown @bind-Value="row.Priority" Data="@priorities" Style="width:100%; display: block;" />
                 </EditTemplate>
+                <FilterTemplate>
+                    <RadzenDropDown @bind-Value=@(priority) Style="width:100%; margin: 8px 4px;"
+                         Change=@OnSelectedStatus Data="@(priorities)" AllowClear="true" Multiple="true" />
+                </FilterTemplate>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn TItem="TableData" Property="WorkFlowStep" Title="Process Status">
                 <Template Context="data">
@@ -113,10 +122,10 @@ else
     RadzenDataGrid<TableData> tasksGrid;
     IList<TableData> tasks;
     TableData? newRow;
-    IEnumerable<string> statuses;
-    IEnumerable<string> priorities;
-    string status;
-    string priority;
+    List<string> statuses;
+    List<string> priorities;
+    IEnumerable<string> status;
+    IEnumerable<string> priority;
     bool disabledBtn = false;
 
     protected override void OnInitialized()
@@ -126,8 +135,9 @@ else
     private async Task GetData()
     {
         tasks = await Http.GetFromJsonAsync<TableData[]>("TableData");
-        statuses = Enum.GetNames(typeof(ActivityStatus));
-        priorities = Enum.GetNames(typeof(PriorityStates)); 
+        tasks = tasks.ToList();
+        statuses = Enum.GetNames(typeof(ActivityStatus)).ToList();
+        priorities = Enum.GetNames(typeof(PriorityStates)).ToList(); 
     }
     private ButtonStyle StatusBtnStyle(string status)
     {
@@ -173,33 +183,54 @@ else
         }
     }
 
-    async Task InsertRow()
+    private void OnSelectedStatus(object value)
+    {
+        if (status != null && !status.Any())
+        {
+            status = null;  
+        }
+    }
+
+    private void OnSelectedPriority(object value)
+    {
+        if (priority != null && !priority.Any())
+        {
+            priority = null;  
+        }
+    }
+
+    private async Task InsertRow()
     {
         disabledBtn = true;
         newRow = new TableData();
         newRow.ActivityName = string.Empty;
         newRow.Photo = tasks[0].Photo;
+        tasks.Add(newRow);
         await tasksGrid.InsertRow(newRow);
     }
 
-    async Task SaveRow(TableData row)
+    private async Task SaveRow(TableData row)
     {
         await tasksGrid.UpdateRow(row);
         disabledBtn = false;
     }
 
-    async Task EditRow(TableData row)
+    private async Task EditRow(TableData row)
     {
         disabledBtn = true;
         await tasksGrid.EditRow(row);
     }
 
-    void CancelEdit(TableData row)
+    private void CancelEdit(TableData row)
     {
         tasksGrid.CancelEditRow(row);
         disabledBtn = false;
     }
-    /*async Task ShowInlineDialog()
+    private int selectIndex(TableData row)
+    {
+        return tasks.Contains(row) ? tasks.IndexOf(row) + 1 : tasks.Count + 1;
+    }
+     /*async Task ShowInlineDialog()
     {
      var result = await DialogService.OpenAsync("Simple Dialog", ds =>
         @<div>

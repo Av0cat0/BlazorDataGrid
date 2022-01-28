@@ -1,3 +1,9 @@
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Client.csproj.AssemblyReference.cache
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Client.AssemblyInfoInputs.cache
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Client.AssemblyInfo.cs
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Client.csproj.CoreCompileInputs.cache
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Client.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\blazor.boot.json
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\blazor.webassembly.js
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\dotnet.6.0.1.1sgellct3b.js
@@ -34,6 +40,7 @@ C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_fr
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.VisualBasic.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.Primitives.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.Registry.dll
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.SystemEvents.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\mscorlib.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\netstandard.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\Radzen.Blazor.dll
@@ -67,6 +74,7 @@ C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_fr
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Diagnostics.TraceSource.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Diagnostics.Tracing.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.dll
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Drawing.Common.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Drawing.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Drawing.Primitives.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Dynamic.Runtime.dll
@@ -257,6 +265,7 @@ C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_fr
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\WindowsBase.dll.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Collections.Concurrent.dll.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Security.Claims.dll.gz
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.SystemEvents.dll.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.ServiceModel.Web.dll.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Text.Encoding.CodePages.dll.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Linq.Dynamic.Core.dll.gz
@@ -295,6 +304,7 @@ C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_fr
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\dotnet.6.0.1.1sgellct3b.js.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Data.DataSetExtensions.dll.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.JSInterop.WebAssembly.dll.gz
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Drawing.Common.dll.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Net.Ping.dll.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Security.AccessControl.dll.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.IO.dll.gz
@@ -434,7 +444,9 @@ C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\Microsoft.E
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\Microsoft.JSInterop.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\Microsoft.JSInterop.WebAssembly.dll
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\Radzen.Blazor.dll
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\System.Drawing.Common.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\System.IO.Pipelines.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\Microsoft.CSharp.dll
@@ -612,12 +624,6 @@ C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\icudt_EFIGS
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\icudt_no_CJK.dat
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\UITable3.Shared.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\UITable3.Shared.pdb
-C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Client.csproj.AssemblyReference.cache
-C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Client.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Client.AssemblyInfoInputs.cache
-C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Client.AssemblyInfo.cs
-C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Client.csproj.CoreCompileInputs.cache
-C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Client.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\build-gz\lYZZn6QD.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\build-gz\GNzWmkpr.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\build-gz\6KufP4z2.gz
@@ -640,7 +646,9 @@ C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\build-gz\eI
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\build-gz\xzex2o4a.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\build-gz\CmayWyXU.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\build-gz\heBk39kr.gz
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\build-gz\c+h19YWT.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\build-gz\akGd6kxA.gz
+C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\build-gz\Hm4awL81.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\build-gz\9qp71MFP.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\build-gz\ckjK3tWS.gz
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\build-gz\OHZ92xO1.gz
@@ -835,11 +843,3 @@ C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Cl
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Client.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\ref\UITable3.Client.dll
 C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\UITable3.Client.pdb
-C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.SystemEvents.dll
-C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Drawing.Common.dll
-C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.SystemEvents.dll.gz
-C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\wwwroot\_framework\System.Drawing.Common.dll.gz
-C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\bin\Debug\net6.0\System.Drawing.Common.dll
-C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\build-gz\c+h19YWT.gz
-C:\Users\Roni\Desktop\UITable\BlazorDataGrid\Client\obj\Debug\net6.0\build-gz\Hm4awL81.gz
