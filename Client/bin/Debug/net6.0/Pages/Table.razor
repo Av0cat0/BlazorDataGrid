@@ -38,12 +38,7 @@ else
             <RadzenDataGridColumn Width="90px" TItem="TableData" Property="Status" Title="Status" TextAlign="TextAlign.Center" 
                 LogicalFilterOperator="LogicalFilterOperator.Or" FilterValue="@(status)" FilterOperator="FilterOperator.Contains"  Type="typeof(IEnumerable<string>)"  >
                 <Template Context="data">
-                    <RadzenButton ButtonStyle=@(StatusBtnStyle(data.Status)) Style="width: 80px;
-    height: 21px;
-    border-radius: 6px;
-    font-size: 12px;
-    text-align: center;
-    padding: 0px;" class="status-btn"  Text="@data.Status" />
+                    <RadzenButton ButtonStyle=@(StatusBtnStyle(data.Status))  class="status-btn"  Text="@data.Status" />
                 </Template>
                 <EditTemplate Context="row">
                    <RadzenDropDown @bind-Value="row.Status" Data="@statuses" Style="width:100%; display: block;" />
@@ -56,7 +51,6 @@ else
             <RadzenDataGridColumn TItem="TableData" Property="ServiceUserId" Title="Assigned To" >
                 <Template Context="data">
                     <RadzenImage Path=@(data.Photo) style="width: 40px; height: 40px; border-radius: 20px; margin-left: 40px" />
-                    <h5 class="mt-1 mb-0" style="font-size: 0.8em; text-align: center;">@data.ActivityName</h5>
                 </Template>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn TItem="TableData" Property="CreatedDate" Title="Start Date" FormatString="{0:d}" >
@@ -77,8 +71,7 @@ else
     border-radius: 6px;
     font-size: 12px;
     text-align: center;
-    padding: 0px;
-position:relative;" Class="Status-btn"  Text="@data.Priority" />
+    padding: 0px;" Class="Status-btn"  Text="@data.Priority" />
                 </Template>
                 <EditTemplate Context="row">
                    <RadzenDropDown @bind-Value="row.Priority" Data="@priorities" Style="width:100%; display: block;" />
