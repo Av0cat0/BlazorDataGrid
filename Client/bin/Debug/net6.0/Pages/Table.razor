@@ -1,7 +1,6 @@
 @page "/tabledata"
 @using UITable3.Shared
 @inject HttpClient Http
-@inject DialogService DialogService
 
 @if (tasks == null)
 {
@@ -9,47 +8,116 @@
 }
 else
 {
-    <RadzenDataGrid @ref="tasksGrid" AllowFiltering="true" FilterMode="FilterMode.Simple" AllowPaging="true" PageSize="10" AllowSorting="true"
-                    Data="@tasks" ColumnWidth="140px" TItem="TableData">
+    <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add New Task" Click="@InsertRow" Disabled=@(disabledBtn)  ButtonStyle="ButtonStyle.Secondary"/>
+    <RadzenDataGrid @ref="tasksGrid" AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" PageSize="10" AllowSorting="true"
+                    Data="@tasks" Style="padding: 0px" ColumnWidth="120px" TItem="TableData" EditMode="DataGridEditMode.Single">
         <Columns>
-            <RadzenDataGridColumn Width="50px" TItem="TableData" Title="#" Filterable="false" Sortable="false" TextAlign="TextAlign.Center">
+            <RadzenDataGridColumn Width="40px" TItem="TableData" Title="#" Filterable="false" Sortable="false" TextAlign="TextAlign.Center">
                 <Template Context="data">
                     @(tasks.IndexOf(data) + 1)
                 </Template>
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn TItem="TableData" Property="ActivityName" Title="Name" />
-            <RadzenDataGridColumn TItem="TableData" Property="ActivityDescription" Title="Description" />
-            <RadzenDataGridColumn TItem="TableData" Property="ActivityContext" Title="Context" />
-            <RadzenDataGridColumn Width="150px" TItem="TableData" Property="Status" Title="Status">
+            <RadzenDataGridColumn TItem="TableData" Property="ActivityName" Title="Name" >
+                <EditTemplate Context="row">
+                    <RadzenTextBox @bind-Value="row.ActivityName" Style="width:100%; display:block;" Name="Name"  />
+                </EditTemplate>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TableData" Property="ActivityDescription" Title="Description" >
+                <EditTemplate Context="row">
+                    <RadzenTextBox @bind-Value="row.ActivityDescription" Style="width:100%; display:block;" Name="Description"  />
+                </EditTemplate>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TableData" Property="ActivityContext" Title="Context" >
+                <EditTemplate Context="row">
+                    <RadzenTextBox @bind-Value="row.ActivityContext" Style="width:100%; display:block;" Name="Context"  />
+                </EditTemplate>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Width="90px" TItem="TableData" Property="Status" Title="Status" TextAlign="TextAlign.Center" 
+                LogicalFilterOperator="LogicalFilterOperator.Or" FilterValue="@(status)"  Type="typeof(IEnumerable<string>)"  >
                 <Template Context="data">
-                    <RadzenButton ButtonStyle=@(StatusBtnStyle(data.Status)) class="status-btn" Text="@data.Status" Click=@ShowInlineDialog />
+                    <RadzenButton ButtonStyle=@(StatusBtnStyle(data.Status)) Style="width: 80px;
+    height: 21px;
+    border-radius: 6px;
+    font-size: 12px;
+    text-align: center;
+    padding: 0px;" class="status-btn"  Text="@data.Status" />
+                </Template>
+                <EditTemplate Context="row">
+                   <RadzenDropDown @bind-Value="row.Status" Data="@statuses" Style="width:100%; display: block;" />
+                </EditTemplate>
+                <FilterTemplate>
+                    <RadzenDropDown @bind-Value=@(status) Style="width:100%; margin: 8px 4px;"
+                         Data="@(statuses)" AllowClear="true" Multiple="true" />
+                </FilterTemplate>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TableData" Property="ServiceUserId" Title="Assigned To" >
+                <Template Context="data">
+                    <RadzenImage Path=@(data.Photo) style="width: 40px; height: 40px; border-radius: 20px; margin-left: 40px" />
+                    <h5 class="mt-1 mb-0" style="font-size: 0.8em; text-align: center;">@data.ActivityName</h5>
                 </Template>
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn TItem="TableData" Property="ServiceUserId" Title="Assigned To">
-                <Template Context="data">
-                    <RadzenImage Path=@(data.Photo) style="width: 40px; height: 40px; border-radius: 6px; float: left;" />
-                </Template>
+            <RadzenDataGridColumn TItem="TableData" Property="CreatedDate" Title="Start Date" FormatString="{0:d}" >
+                <EditTemplate Context="row">
+                    <RadzenDatePicker @bind-Value="row.CreatedDate" Style="width:100%;" Name="Start Date"  />
+                </EditTemplate>
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn TItem="TableData" Property="CreatedDate" Title="Start Date" FormatString="{0:d}" />
-            <RadzenDataGridColumn TItem="TableData" Property="DueDate" Title="Due Date" FormatString="{0:d}" />
-            <RadzenDataGridColumn Width="150px" TItem="TableData" Property="Priority" Title="Priority">
-                <Template Context="data">
-                    <RadzenButton ButtonStyle=@(PriorityBtnStyle(data.Priority)) Class="Status-btn"  Text="@data.Priority" />
-                </Template>
+            <RadzenDataGridColumn TItem="TableData" Property="DueDate" Title="Due Date" FormatString="{0:d}" >
+                <EditTemplate Context="row">
+                    <RadzenDatePicker @bind-Value="row.DueDate" Style="width:100%;" Name="Due Date"  />
+                </EditTemplate>
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn Width="150px" TItem="TableData" Property="WorkFlowStep" Title="Process Status">
+            <RadzenDataGridColumn Width="90px" TItem="TableData" Property="Priority" Title="Priority">
+                <Template Context="data">
+                    <RadzenButton ButtonStyle=@(PriorityBtnStyle(data.Priority)) Style="width: 80px;
+    height: 21px;
+    border-radius: 6px;
+    font-size: 12px;
+    text-align: center;
+    padding: 0px;" Class="Status-btn"  Text="@data.Priority" />
+                </Template>
+                <EditTemplate Context="row">
+                   <RadzenDropDown @bind-Value="row.Priority" Data="@priorities" Style="width:100%; display: block;" />
+                </EditTemplate>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TableData" Property="WorkFlowStep" Title="Process Status">
                 <Template Context="data">
                     <RadzenButton ButtonStyle="ButtonStyle.Info" Icon="info" Class="m-1" Text="@data.WorkFlowStep" />
                 </Template>
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn TItem="TableData" Property="Data1" Title="Data1" />
-            <RadzenDataGridColumn TItem="TableData" Property="Data2" Title="Data2" />
+            <RadzenDataGridColumn TItem="TableData" Property="Data1" Title="Data1" Visible="false">
+                <EditTemplate Context="row">
+                    <RadzenTextBox @bind-Value="row.Data1" Style="width:100%; display:block;" Name="data1"  />
+                </EditTemplate>
+            </RadzenDataGridColumn> 
+            <RadzenDataGridColumn TItem="TableData" Property="Data2" Title="Data2" Visible="false">
+                <EditTemplate Context="row">
+                    <RadzenTextBox @bind-Value="row.Data2" Style="width:100%; display:block;" Name="data2"  />
+                </EditTemplate>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Width="110px" TItem="TableData" Context="sampleBlazorModelsSampleOrder" Filterable="false" Sortable="false" TextAlign="TextAlign.Center">
+                <Template Context="row">
+                    <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Light" Class="m-1" Click="@(args => EditRow(row))" @onclick:stopPropagation="true">
+                    </RadzenButton>
+                </Template>
+                <EditTemplate Context="row">
+                    <RadzenButton Icon="check" ButtonStyle="ButtonStyle.Secondary" Class="m-1" Click="@((args) => SaveRow(row))">
+                    </RadzenButton>
+                    <RadzenButton Icon="close" ButtonStyle="ButtonStyle.Light" Class="m-1" Click="@((args) => CancelEdit(row))">
+                    </RadzenButton>
+                </EditTemplate>
+            </RadzenDataGridColumn>
         </Columns>
     </RadzenDataGrid>
 }
 @code {
     RadzenDataGrid<TableData> tasksGrid;
     IList<TableData> tasks;
+    TableData? newRow;
+    IEnumerable<string> statuses;
+    IEnumerable<string> priorities;
+    string status;
+    string priority;
+    bool disabledBtn = false;
 
     protected override void OnInitialized()
     {
@@ -58,6 +126,8 @@ else
     private async Task GetData()
     {
         tasks = await Http.GetFromJsonAsync<TableData[]>("TableData");
+        statuses = Enum.GetNames(typeof(ActivityStatus));
+        priorities = Enum.GetNames(typeof(PriorityStates)); 
     }
     private ButtonStyle StatusBtnStyle(string status)
     {
@@ -103,7 +173,33 @@ else
         }
     }
 
-    async Task ShowInlineDialog()
+    async Task InsertRow()
+    {
+        disabledBtn = true;
+        newRow = new TableData();
+        newRow.ActivityName = string.Empty;
+        newRow.Photo = tasks[0].Photo;
+        await tasksGrid.InsertRow(newRow);
+    }
+
+    async Task SaveRow(TableData row)
+    {
+        await tasksGrid.UpdateRow(row);
+        disabledBtn = false;
+    }
+
+    async Task EditRow(TableData row)
+    {
+        disabledBtn = true;
+        await tasksGrid.EditRow(row);
+    }
+
+    void CancelEdit(TableData row)
+    {
+        tasksGrid.CancelEditRow(row);
+        disabledBtn = false;
+    }
+    /*async Task ShowInlineDialog()
     {
      var result = await DialogService.OpenAsync("Simple Dialog", ds =>
         @<div>
@@ -114,7 +210,10 @@ else
                 </div>
         </div>);
     
-    }
+    }*/
+
+
+
 //ContextMenu=@(args => ShowContextMenuWithItems(args))
 }
 

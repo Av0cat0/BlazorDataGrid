@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a96589fc-fc0a-4e44-8849-2eac5509aa3b": {
+      "ProjectGuid": "a96589fc-fc0a-4e44-8849-2eac5509aa3b",
+      "DisplayName": "UITable3.Server",
+      "ColorIndex": 0
+    },
+    "58da6a3d-2ad6-4327-9856-c81187afaec6": {
+      "ProjectGuid": "58da6a3d-2ad6-4327-9856-c81187afaec6",
+      "DisplayName": "UITable3.Client",
+      "ColorIndex": 1
+    },
+    "b0bc8aa4-b5f2-41c6-ba03-9ef05418896d": {
+      "ProjectGuid": "b0bc8aa4-b5f2-41c6-ba03-9ef05418896d",
+      "DisplayName": "UITable3.Shared",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

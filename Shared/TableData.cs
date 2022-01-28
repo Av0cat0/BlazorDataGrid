@@ -11,24 +11,24 @@ namespace UITable3.Shared
     }
     public enum PriorityStates
     {
-        Critical = 1,
-        High = 2,
-        Medium = 3,
-        Low = 4
+        Critical = 0,
+        High = 1,
+        Medium = 2,
+        Low = 3
     }
     public class TableData
     {
         public string ActivityName { set; get; } = "name";
-        public string ActivityDescription { set; get; } = "Description";
-        public string ActivityContext { set; get; } = "Context";
+        public string? ActivityDescription { set; get; }
+        public string? ActivityContext { set; get; }
         public string Status { set; get; } = "Draft";
         public Guid ServiceUserId { set; get; }
         public DateTime CreatedDate { set; get; }
         public DateTime DueDate { set; get; }
         public string Priority { set; get; } = "Low";
         public string WorkFlowStep { set; get; } = "step";
-        public string Data1 { set; get; } = "data1";
-        public string Data2 { set; get; } = "data2";
+        public string? Data1 { set; get; }
+        public string? Data2 { set; get; }
         public string? Photo { set; get; }
     }
 
@@ -49,7 +49,7 @@ namespace UITable3.Shared
                 "Elior",
                 "Amit",
                 "Bibi",
-                "Maria",
+                "Sarit",
                 "Avigdor",
                 "Miri",
                 "Vladimir" };
@@ -65,7 +65,8 @@ namespace UITable3.Shared
                 "Van Dam",
                 "Obama",
                 "Egg",
-                "The Pope" };
+                "The Pope",
+                "Hadad"};
         }
 
         public string RandomFirstName()

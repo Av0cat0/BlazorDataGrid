@@ -873,19 +873,19 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-aivudQpHN0iqbsp\/XSJkTN5MuN\/4L\/sn6bMQDfP3Kv0=",
+      "hash": "sha256-3xOfZKHhkPbppchDDLqHfszpSHzfhMwMdbtU8En\/95c=",
       "url": "_framework\/UITable3.Shared.dll"
     },
     {
-      "hash": "sha256-XrkNVh6X0eYE6OcuolA6Y\/IpmIBmyjJr2K8gmuGSoOo=",
+      "hash": "sha256-4bxETpa6kqLAWtCD9pCivka16igUIJJlC6DTsTMRXPc=",
       "url": "_framework\/UITable3.Shared.pdb"
     },
     {
-      "hash": "sha256-dLd4LmUvR4kzmshOeZVOdqdkpZqS76JQ+SQQg9NVTgU=",
+      "hash": "sha256-ZepLyoxJpNx6NzukXERFbzAvlrDImqiR5MuHFeMgfCw=",
       "url": "_framework\/UITable3.Client.dll"
     },
     {
-      "hash": "sha256-QDuap4cqyNIvkw6iJUVTo5AZAj8iABScb0m5N8nad4U=",
+      "hash": "sha256-zHZdaKNTjQ0bZPF7CgIicRPIAQPo51I0lVO+rXiw3RU=",
       "url": "_framework\/UITable3.Client.pdb"
     },
     {
@@ -893,7 +893,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-DRwHgzoyz4FNkhPACUVS5yahMpsIMMMTixdcbw0xwmA=",
+      "hash": "sha256-Kb\/dIgEeksxackN2tCBl37wMOR2S0h4emEkhBc7lr+4=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1005,5 +1005,5 @@
       "url": "_content\/Radzen.Blazor\/Radzen.Blazor.js"
     }
   ],
-  "version": "UPplDsbj"
+  "version": "Oi+Nsup1"
 };
