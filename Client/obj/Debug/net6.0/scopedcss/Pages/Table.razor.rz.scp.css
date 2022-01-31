@@ -1,6 +1,14 @@
 .status-btn[b-myg8gh4qra] {
-    width: 70px;
+    width: 700px;
     height: 25px;
     border-radius: 6px;
     font-size: 12px;
+}
+.grid-v[b-myg8gh4qra] {
+    background-color: #f1f1f1;
+    border-collapse: collapse;
+    border-right: none;
+}
+.rz-grid-table td:not(:last-child)[b-myg8gh4qra] {
+    background-color: rgba(244, 243, 170, 0.7);
 }
