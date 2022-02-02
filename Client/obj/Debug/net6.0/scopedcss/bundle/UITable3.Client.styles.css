@@ -22,10 +22,13 @@
 
 main[b-1rxhw9atne] {
     flex: 1;
+    
 }
 
 .sidebar[b-1rxhw9atne] {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    border-radius: 20px;
+    
 }
 
 .top-row[b-1rxhw9atne] {
@@ -120,6 +123,7 @@ main[b-1rxhw9atne] {
 .nav-item[b-y957k4sf79] {
     font-size: 0.9rem;
     padding-bottom: 0.5rem;
+   
 }
 
     .nav-item:first-of-type[b-y957k4sf79] {

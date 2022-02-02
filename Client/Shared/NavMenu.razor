@@ -1,45 +1,46 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">UITable3</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+﻿@inject NavMenuService navMenuService
+
+<div style="background-color: #f7f7f7">    
+    <div class="top-row ps-3 navbar navbar-dark" style="border-radius: 20px 20px 0px 0px; background-color: rgba(5,22,61,1);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">Table</a>
+            <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
     </div>
 </div>
-
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+<div class="@NavMenuCssClass" >
     <nav class="flex-column">
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch
+                <span class="oi oi-home" aria-hidden="true"></span> @homeLable
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="tabledata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Table
+                <span class="oi oi-list-rich" aria-hidden="true"></span> @tableLable
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" style="position: absolute;
+top: 50%;
+left: 80%;
+margin: -35px 0 0 -35px; width:50px; " @onclick="ToggleNavMenu">
+                <span class="oi oi-command" aria-hidden="true"></span> 
             </NavLink>
         </div>
     </nav>
 </div>
 
 @code {
-    private bool collapseNavMenu = true;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
+    private string? NavMenuCssClass => navMenuService.shouldCollapse ? "collapse" : null;
+    private string homeLable  => (navMenuService.shouldCollapse) ? "" : "Home";
+    private string tableLable  => (navMenuService.shouldCollapse) ? "" : "Table";
     private void ToggleNavMenu()
     {
-        collapseNavMenu = !collapseNavMenu;
+        navMenuService.shouldCollapse = !navMenuService.shouldCollapse;
     }
 }
 

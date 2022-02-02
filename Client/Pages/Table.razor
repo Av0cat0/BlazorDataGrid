@@ -1,6 +1,7 @@
 @page "/tabledata"
 @using UITable3.Shared
 @inject HttpClient Http
+@inject ContextMenuService ContextMenuService
 
 @if (tasks == null)
 {
@@ -42,26 +43,12 @@ else
             <RadzenDataGridColumn Width="90px" TItem="TableData" Property="Status" Title="Status" TextAlign="TextAlign.Center"  CssClass="grid-table"
                 LogicalFilterOperator="LogicalFilterOperator.Or" FilterValue="@(status)" FilterOperator="FilterOperator.Contains"  Type="typeof(IEnumerable<string>)"  >
                 <Template Context="data">     
-                    <RadzenSplitButton Text="SplitButton"  Style="width: 75px;
+                   <RadzenButton ButtonStyle=@(StatusBtnStyle(data.Status)) Text="@data.Status" Style="width: 75px;
     height: 34px;
     border-radius: 20px;
     font-size: 14px;
     text-align: center;
-    padding: 0px 5px;" @onmouseover="@(args =>ClickableBtn(tasks.IndexOf(data),false))" Visible="@(showClickableBtn[tasks.IndexOf(data)])">
-                        <ChildContent>
-                            @for (int i=0; i<statuses.Count; i++)
-                            {
-                            <RadzenSplitButtonItem Text="@statuses[i]" Value="@i.ToString()" />   
-                            }
-                        </ChildContent>
-                    </RadzenSplitButton>
-                        <RadzenButton ButtonStyle=@(StatusBtnStyle(data.Status)) Text="@data.Status" Style="width: 75px;
-    height: 34px;
-    border-radius: 20px;
-    font-size: 14px;
-    text-align: center;
-    padding: 0px 5px;" @onmouseover="@(args =>ClickableBtn(tasks.IndexOf(data),true))" Visible="@(!showClickableBtn[tasks.IndexOf(data)])" />
-                 
+    padding: 0px 5px;"   ContextMenu=@(args => ShowStatuses(args)) Click="@(args => ShowStatuses(args))" />
                 </Template>
                 <EditTemplate Context="row">
                    <RadzenDropDown @bind-Value="row.Status" Data="@statuses" Style="width:100%; display: block;" />
@@ -111,7 +98,7 @@ else
     border-radius: 20px;
     font-size: 14px;
     text-align: center;
-    padding: 0px 5px;" />
+    padding: 0px 5px;" ContextMenu=@(args => ShowStatuses(args))  />
                 </Template>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn TItem="TableData" Property="Data1" Title="Data1" Visible="false">
@@ -156,7 +143,7 @@ else
 
     protected override void OnInitialized()
     {
-        
+
         //tasks = Http.GetFromJsonAsync<TableData[]>("TableData");
     }
     private async Task GetData()
@@ -168,6 +155,7 @@ else
         priorities = Enum.GetNames(typeof(PriorityStates)).ToList(); 
         activityNames = tasks.AsEnumerable().Select(r => r.ActivityName).ToList();
         showClickableBtn = new bool[tasks.Count];
+
     }
     private ButtonStyle StatusBtnStyle(string status)
     {
@@ -213,6 +201,31 @@ else
         }
     }
 
+    void ShowStatuses(MouseEventArgs args)
+    {
+        List<ContextMenuItem> cmi=new List<ContextMenuItem>();
+        for(int i=0; i<statuses.Count(); i++)
+        {
+            cmi.Insert(i,new ContextMenuItem() { Text = statuses.ElementAt(i), Value = i + 1 });
+        }
+        ContextMenuService.Open(args, cmi, OnMenuItemClick);
+    }
+
+    void OnMenuItemClick(MenuItemEventArgs args)
+    {
+        Console.WriteLine($"Menu item with Value={args.Value} clicked");
+
+    }
+
+    void ShowPriorities(MouseEventArgs args)
+    {
+        List<ContextMenuItem> cmi=new List<ContextMenuItem>();
+        for(int i=0; i<priorities.Count(); i++)
+        {
+            cmi.Insert(i,new ContextMenuItem() { Text = priorities.ElementAt(i), Value = i + 1 });
+        }
+        ContextMenuService.Open(args, cmi, OnMenuItemClick);
+    }
     private void OnSelectedStatus(object value)
     {
         if (status != null && !status.Any())
@@ -233,7 +246,8 @@ else
     }
      void CellRender(DataGridCellRenderEventArgs<TableData> args)
     {
-       args.Attributes.Add("style", $"border-right: {"0px"};");
+       args.Attributes.Add("style", $"border-right: {"0px"}; ");
+       /*        background-color: {"white"};        */
     }
 
     void RowRender(RowRenderEventArgs<TableData> args)

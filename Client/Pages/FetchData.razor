@@ -10,19 +10,18 @@
 
 @if (forecasts == null)
 {
-    <p><em>Loading...</em></p>
-    <button class="btn btn-primary" @onclick="@GetData">Load</button>
-     <RadzenSplitButton Text="SplitButton"  Style="width: 75px;
+    <button Text="@data.Last()" style="width: 75px;
     height: 34px;
     border-radius: 20px;
     font-size: 14px;
     text-align: center;
-    padding: 0px 5px;">
-                        <ChildContent>
-                            <RadzenSplitButtonItem Text="aaa" Value="1" />   
-                            <RadzenSplitButtonItem Text="aaa" Value="1"  /> 
-                        </ChildContent>
-                    </RadzenSplitButton>
+    padding: 0px 5px;"></button>
+
+
+    <p><em>Loading...</em></p>
+    <button class="btn btn-primary" @onclick="@GetData">Load</button>
+      <RadzenDropDownDataGrid TValue="string" LoadData="@LoadData" AllowFiltering="false" AllowClear="false"
+                                    Data=@data  Class="w-100" />
 }
 else
 {
@@ -51,10 +50,17 @@ else
 
 @code {
     private WeatherForecast[]? forecasts;
+    IEnumerable<string> data;
 
     private async Task GetData()
     {
-            forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
+        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
+    }
+    void LoadData(LoadDataArgs args)
+    {
+        List<string> statuses;
+        statuses = Enum.GetNames(typeof(ActivityStatus)).ToList();
+        data = statuses;
     }
 }
 
