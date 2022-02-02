@@ -1,7 +1,7 @@
 ﻿@inject NavMenuService navMenuService
 
 <div style="background-color: #f7f7f7">    
-    <div class="top-row ps-3 navbar navbar-dark" style="border-radius: 20px 20px 0px 0px; background-color: rgba(5,22,61,1);">
+    <div class="top-row ps-3 navbar navbar-dark" style="border-radius: 0px 20px 0px 0px; background-color: rgba(5,22,61,1);">
         <div class="container-fluid">
             <a class="navbar-brand" href="">Table</a>
             <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -10,7 +10,7 @@
         </div>
     </div>
 </div>
-<div class="@NavMenuCssClass" >
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <nav class="flex-column">
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
