@@ -1,0 +1,328 @@
+@page "/tabledata"
+@using UITable3.Shared
+@inject HttpClient Http
+@inject ContextMenuService ContextMenuService
+
+@if (tasks == null)
+{
+    <RadzenButton Click=@(args => GetData()) Text="Load Data" ButtonStyle="ButtonStyle.Light" />
+}
+else
+{
+    
+    <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px;" Text="Add New Task" Click="@InsertRow" Disabled=@(disabledBtn)  ButtonStyle="ButtonStyle.Secondary"/>
+    <RadzenDataGrid @ref="tasksGrid" AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowSorting="true" HeaderCellRender="@CellRender" RowRender="@RowRender"
+                    Data="@filteredTasks" Style="padding: 0px; border: 0px;" CellRender="@CellRender" ColumnWidth="120px" TItem="TableData" EditMode="DataGridEditMode.Single">
+        <Columns> 
+            <RadzenDataGridColumn Width="50px" TItem="TableData" Title="#" Filterable="false" Sortable="false" TextAlign="TextAlign.Center">
+                <Template Context="data" >
+                    @(tasks.IndexOf(data) + 1)
+                </Template>
+                <EditTemplate Context="row">
+                    <RadzenTextBox  Value=@(selectIndex(row).ToString())  Disabled="true"  />
+                </EditTemplate>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TableData" Property="ActivityName" Title="Name" LogicalFilterOperator="LogicalFilterOperator.Or"  >
+                <EditTemplate Context="row">
+                    <RadzenTextBox @bind-Value="row.ActivityName" Style="width:100%; display:block;" Name="Name" AutoComplete="true"   />
+                </EditTemplate>
+                  <FilterTemplate>
+                      <RadzenDropDown AllowClear="true" AllowFiltering="true" Data=@activityNames Multiple="true" @bind-Value="selectedActivityNames" Change=@FilterTasks/>
+                </FilterTemplate>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TableData" Property="ActivityDescription" Title="Description" >
+                <EditTemplate Context="row">
+                    <RadzenTextBox @bind-Value="row.ActivityDescription" Style="width:100%; display:block;" Name="Description"  />
+                </EditTemplate>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TableData" Property="ActivityContext" Title="Context" >
+                <EditTemplate Context="row">
+                    <RadzenTextBox @bind-Value="row.ActivityContext" Style="width:100%;" Name="Context"  />
+                </EditTemplate>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Width="90px" TItem="TableData" Property="Status" Title="Status" TextAlign="TextAlign.Center"  CssClass="grid-table"
+                LogicalFilterOperator="LogicalFilterOperator.Or" FilterValue="@(status)" FilterOperator="FilterOperator.Contains"  Type="typeof(IEnumerable<string>)"  >
+                <Template Context="data">     
+                   <RadzenButton ButtonStyle=@(StatusBtnStyle(data.Status)) Text="@data.Status" Style="width: 75px;
+    height: 34px;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center;
+    padding: 0px 5px;"   ContextMenu=@(args => ShowStatuses(args)) Click="@(args => ShowStatuses(args))" />
+                </Template>
+                <EditTemplate Context="row">
+                   <RadzenDropDown @bind-Value="row.Status" Data="@statuses" Style="width:100%; display: block;" />
+                </EditTemplate>
+                <FilterTemplate>
+                    <RadzenDropDown @bind-Value=@(status) Style="width:100%; margin: 8px 4px;"
+                         Change=@OnSelectedStatus Data="@(statuses)" AllowClear="true" Multiple="true" />
+                </FilterTemplate>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TableData" Property="ServiceUserId" Title="Assigned To" >
+                <Template Context="data">
+                    <RadzenImage Path=@(data.Photo) style="width: 40px; height: 40px; border-radius: 20px; margin-left: 40px" />
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TableData" Property="CreatedDate" Title="Start Date" FormatString="{0:d}" >
+                <EditTemplate Context="row">
+                    <RadzenDatePicker @bind-Value="row.CreatedDate" Style="width:100%;" Name="Start Date"  />
+                </EditTemplate>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TableData" Property="DueDate" Title="Due Date" FormatString="{0:d}" >
+                <EditTemplate Context="row">
+                    <RadzenDatePicker @bind-Value="row.DueDate" Style="width:100%;" Name="Due Date"  />
+                </EditTemplate>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Width="90px" TItem="TableData" Property="Priority" Title="Priority" TextAlign="TextAlign.Center"
+             LogicalFilterOperator="LogicalFilterOperator.Or" FilterValue="@(priority)" FilterOperator="FilterOperator.Contains"  Type="typeof(IEnumerable<string>)">
+                <Template Context="data">
+                    <RadzenButton ButtonStyle=@(PriorityBtnStyle(data.Priority)) Style="width: 75px;
+    height: 34px;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center;
+    padding: 0px 5px;" Text="@data.Priority" />
+                </Template>
+                <EditTemplate Context="row">
+                   <RadzenDropDown @bind-Value="row.Priority" Data="@priorities" Style="width:100%; display: block;" />
+                </EditTemplate>
+                <FilterTemplate>
+                    <RadzenDropDown @bind-Value=@(priority) Style="width:100%; margin: 8px 4px;"
+                         Change=@OnSelectedStatus Data="@(priorities)" AllowClear="true" Multiple="true" />
+                </FilterTemplate>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TableData" Property="WorkFlowStep" Title="Process Status">
+                <Template Context="data">
+                    <RadzenButton ButtonStyle="ButtonStyle.Info" Icon="info" Class="m-1" Text="@data.WorkFlowStep" Style="width: 75px;
+    height: 34px;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center;
+    padding: 0px 5px;" ContextMenu=@(args => ShowStatuses(args))  />
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="TableData" Property="Data1" Title="Data1" Visible="false">
+                <EditTemplate Context="row">
+                    <RadzenTextBox @bind-Value="row.Data1" Style="width:100%; display:block;" Name="data1"  />
+                </EditTemplate>
+            </RadzenDataGridColumn> 
+            <RadzenDataGridColumn TItem="TableData" Property="Data2" Title="Data2" Visible="false">
+                <EditTemplate Context="row">
+                    <RadzenTextBox @bind-Value="row.Data2" Style="width:100%; display:block;" Name="data2"  />
+                </EditTemplate>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn Width="110px" TItem="TableData" Context="sampleBlazorModelsSampleOrder" Filterable="false" Sortable="false" TextAlign="TextAlign.Center">
+                <Template Context="row">
+                    <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Light" Class="m-1" Click="@(args => EditRow(row))" @onclick:stopPropagation="true">
+                    </RadzenButton>
+                </Template>
+                <EditTemplate Context="row">
+                    <RadzenButton Icon="check" ButtonStyle="ButtonStyle.Secondary" Class="m-1" Click="@((args) => SaveRow(row))">
+                    </RadzenButton>
+                    <RadzenButton Icon="close" ButtonStyle="ButtonStyle.Light" Class="m-1" Click="@((args) => CancelEdit(row))">
+                    </RadzenButton>
+                </EditTemplate>
+            </RadzenDataGridColumn>
+        </Columns>
+    </RadzenDataGrid>
+}
+@code {
+    RadzenDataGrid<TableData> tasksGrid;
+    IList<TableData> tasks;
+    IEnumerable<string> status;
+    IEnumerable<string> priority;
+    IList<TableData> filteredTasks;
+    IEnumerable<string> activityNames;
+    IEnumerable<string> selectedActivityNames;
+    List<string> statuses;
+    List<string> priorities;
+    TableData? newRow;
+    bool[] showClickableBtn;
+    bool disabledBtn = false;
+
+
+    protected override void OnInitialized()
+    {
+
+        //tasks = Http.GetFromJsonAsync<TableData[]>("TableData");
+    }
+    private async Task GetData()
+    {
+        tasks = await Http.GetFromJsonAsync<TableData[]>("TableData");
+        filteredTasks = tasks.ToList();
+        tasks = tasks.ToList();
+        statuses = Enum.GetNames(typeof(ActivityStatus)).ToList();
+        priorities = Enum.GetNames(typeof(PriorityStates)).ToList(); 
+        activityNames = tasks.AsEnumerable().Select(r => r.ActivityName).ToList();
+        showClickableBtn = new bool[tasks.Count];
+
+    }
+    private ButtonStyle StatusBtnStyle(string status)
+    {
+        switch (status)
+        {
+            case "Draft":
+                return ButtonStyle.Secondary;
+
+            case "Active":
+                return ButtonStyle.Info;
+
+            case "Closed":
+                return ButtonStyle.Success;
+
+            case "Cancelled":
+                return ButtonStyle.Warning;
+
+            case "Deleted":
+                return ButtonStyle.Danger;
+
+            default:
+                return ButtonStyle.Danger;
+        }
+    }
+    private ButtonStyle PriorityBtnStyle(string priority)
+    {
+        switch (priority)
+        {
+            case "Critical":
+                return ButtonStyle.Danger;
+
+            case "High":
+                return ButtonStyle.Warning;
+
+            case "Medium":
+                return ButtonStyle.Success;
+
+            case "Low":
+                return ButtonStyle.Info;
+
+            default:
+                return ButtonStyle.Danger;
+        }
+    }
+
+    void ShowStatuses(MouseEventArgs args)
+    {
+        List<ContextMenuItem> cmi=new List<ContextMenuItem>();
+        for(int i=0; i<statuses.Count(); i++)
+        {
+            cmi.Insert(i,new ContextMenuItem() { Text = statuses.ElementAt(i), Value = i + 1 });
+        }
+        ContextMenuService.Open(args, cmi, OnMenuItemClick);
+    }
+
+    void OnMenuItemClick(MenuItemEventArgs args)
+    {
+        Console.WriteLine($"Menu item with Value={args.Value} clicked");
+
+    }
+
+    void ShowPriorities(MouseEventArgs args)
+    {
+        List<ContextMenuItem> cmi=new List<ContextMenuItem>();
+        for(int i=0; i<priorities.Count(); i++)
+        {
+            cmi.Insert(i,new ContextMenuItem() { Text = priorities.ElementAt(i), Value = i + 1 });
+        }
+        ContextMenuService.Open(args, cmi, OnMenuItemClick);
+    }
+    private void OnSelectedStatus(object value)
+    {
+        if (status != null && !status.Any())
+        {
+            status = null;  
+        }
+    }
+    private void ClickableBtn(int i,bool shouldShow)
+    {
+        showClickableBtn[i] = shouldShow;
+    }
+    private void OnSelectedPriority(object value)
+    {
+        if (priority != null && !priority.Any())
+        {
+            priority = null;  
+        }
+    }
+     void CellRender(DataGridCellRenderEventArgs<TableData> args)
+    {
+       args.Attributes.Add("style", $"border-right: {"0px"}; ");
+       /*        background-color: {"white"};        */
+    }
+
+    void RowRender(RowRenderEventArgs<TableData> args)
+    {
+        args.Attributes.Add("style", $"background-color: {"white"};");
+    }
+
+    private async Task InsertRow()
+    {
+        disabledBtn = true;
+        newRow = new TableData();
+        newRow.ActivityName = string.Empty;
+        newRow.Photo = tasks[0].Photo;
+        filteredTasks.Add(newRow);
+        tasks.Add(newRow);
+        await tasksGrid.InsertRow(newRow);
+    }
+
+    private async Task SaveRow(TableData row)
+    {
+        await tasksGrid.UpdateRow(row);
+        disabledBtn = false;
+    }
+
+    private async Task EditRow(TableData row)
+    {
+        disabledBtn = true;
+        await tasksGrid.EditRow(row);
+    }
+
+    private void CancelEdit(TableData row)
+    {
+        tasksGrid.CancelEditRow(row);
+        disabledBtn = false;
+    }
+    private int selectIndex(TableData row)
+    {
+        return tasks.Contains(row) ? tasks.IndexOf(row) + 1 : tasks.Count + 1;
+    }
+
+    void FilterTasks()
+    {
+        IEnumerable<TableData> defaultData  = tasks;
+        IEnumerable<TableData> result= filteredTasks;
+        if (filteredTasks==null)
+            throw new ArgumentNullException();
+        if (selectedActivityNames != null)
+        {
+            result = null;
+            foreach (string selectedActivityName in selectedActivityNames)
+            {
+                defaultData = tasks.Where(task => task.ActivityName == selectedActivityName);
+                if (result == null)
+                    result = defaultData;
+                else
+                    result.Concat(defaultData);
+            }
+        }
+        filteredTasks  = result.ToList();
+    }
+     /*async Task ShowInlineDialog()
+    {
+     var result = await DialogService.OpenAsync("Simple Dialog", ds =>
+        @<div>
+                <div class="col">
+                    <RadzenButton Text="Ok" Click="() => ds.Close(true)" Class="mr-1" Style="width: 80px;" />
+                    <RadzenButton Text="Cancel" Click="() => ds.Close(false)" ButtonStyle="ButtonStyle.Secondary" Class="mr-1" />
+                    <RadzenButton Text="Refresh" Click="() => ds.Refresh() " ButtonStyle="ButtonStyle.Light"  Class="mr-1 float-right" />          
+                </div>
+        </div>);
+    
+    }*/
+
+
+
+//ContextMenu=@(args => ShowContextMenuWithItems(args))
+}
+

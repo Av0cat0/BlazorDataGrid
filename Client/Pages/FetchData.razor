@@ -1,0 +1,66 @@
+﻿@page "/fetchdata"
+@using UITable3.Shared
+@inject HttpClient Http
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (forecasts == null)
+{
+    <button Text="@data.Last()" style="width: 75px;
+    height: 34px;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center;
+    padding: 0px 5px;"></button>
+
+
+    <p><em>Loading...</em></p>
+    <button class="btn btn-primary" @onclick="@GetData">Load</button>
+      <RadzenDropDownDataGrid TValue="string" LoadData="@LoadData" AllowFiltering="false" AllowClear="false"
+                                    Data=@data  Class="w-100" />
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private WeatherForecast[]? forecasts;
+    IEnumerable<string> data;
+
+    private async Task GetData()
+    {
+        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
+    }
+    void LoadData(LoadDataArgs args)
+    {
+        List<string> statuses;
+        statuses = Enum.GetNames(typeof(ActivityStatus)).ToList();
+        data = statuses;
+    }
+}
+

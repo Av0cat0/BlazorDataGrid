@@ -1,0 +1,51 @@
+﻿@inject NavMenuService navMenuService
+
+<div style="background-color: #f7f7f7">    
+    <div class="top-row ps-3 navbar navbar-dark" style="border-radius: 0px 20px 0px 0px; background-color: rgba(5,22,61,1);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">Table</a>
+            <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="@NavMenuCssClass" >
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> @homeLable
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="tabledata">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> @tableLable
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" style="position: absolute;
+top: 50%;
+left: 80%;
+margin: -35px 0 0 -35px; width:50px; " @onclick="ToggleNavMenu">
+                <span class="oi oi-command" aria-hidden="true"></span> 
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+@code {
+
+    [Parameter] public MainLayout ml { set; get; }
+
+    private string? NavMenuCssClass => navMenuService.shouldCollapse ? "collapse" : null;
+    private string homeLable  => (navMenuService.shouldCollapse) ? "" : "Home";
+    private string tableLable  => (navMenuService.shouldCollapse) ? "" : "Table";
+    private void ToggleNavMenu()
+    {
+        //navMenuService.shouldCollapse = !navMenuService.shouldCollapse;
+        navMenuService.SetCollapse(!navMenuService.shouldCollapse);
+        StateHasChanged();
+        ml?.RefreshLayout();
+    }
+}
+
