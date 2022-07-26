@@ -200,15 +200,15 @@
       "mscorlib.dll": "sha256-+5VU+MYaTQMTlRe9QKobEjWZWv6I9teAGdNndWSBqWE=",
       "netstandard.dll": "sha256-E5RFhGIaDH5QM6BEbFUuHU8U9wP6N6jbo5MCttzLOCM=",
       "System.Private.CoreLib.dll": "sha256-9NtEbYixyog7vUmeYXyyqzfBXUYl8wxoVQ26Ji7sNRg=",
-      "UITable3.Shared.dll": "sha256-cgCKpDPctzkdRrdQHi+fUxmnpCLvVqPPCPcSd6dK0nM=",
-      "UITable3.Client.dll": "sha256-leYK571m1F12NY7\/LA5W33EXvoRMSNs4spjluPPt7QE="
+      "UITable3.Shared.dll": "sha256-o+AuZRIoe4fojRXN6IfOP1gxS611cymLDi2ZeJrcjaw=",
+      "UITable3.Client.dll": "sha256-4ED53la8oEqm+JqpL5nRnvNBT+DCqSEAXVPZ8rJcyoM="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "UITable3.Shared.pdb": "sha256-Ow\/y+8mc10YVWNJE5kNiCrxbRzK3ckWdsYIGjfhkecE=",
-      "UITable3.Client.pdb": "sha256-VNaee9MPCbndpttl6Ah9TOq9+BQMGNHkWspeY88a70E="
+      "UITable3.Shared.pdb": "sha256-5bZRA90P+twyCPDupDvWj05AhUf6cHAp+ko78CBOYmI=",
+      "UITable3.Client.pdb": "sha256-uBwTtIBtM\/19XEgcFDS22sqLIj2OyyIpTGyxBQXFYpc="
     },
     "runtime": {
       "dotnet.6.0.1.1sgellct3b.js": "sha256-awQsJ\/WxYhouHPuE+i3eJqjA4XClQlr2rD6nKvW80ww=",
